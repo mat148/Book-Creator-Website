@@ -1,0 +1,244 @@
+@import ../base/variables
+.invisible
+  display: none
+.pop-up
+  height: auto
+  width: 448px
+  background: white
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  border-radius: 6px
+  box-shadow: $drop-shadow
+  border: 1px solid $light-grey
+  z-index: 6
+  padding: $padding
+  box-sizing: border-box
+  .title
+    font-size: 16px
+    margin-bottom: 10px
+  .note
+    font-size: 14px
+    margin-top: 5px
+    color: $light-grey
+  .title-section
+    float: left
+    width: 100%
+    display: block
+    h1
+      float: left
+      font-weight: 700
+      font-size: 20px
+    i
+      float: right
+      color: $light-grey
+      &:hover
+        color: $dark-grey
+  .toggle-holder
+    float: left
+    width: 100%
+    display: block
+    margin-top: 30px
+    .toggle-btn
+      width: 48%
+      height: 40px
+      box-sizing: border-box
+      background-color: $white
+      display: block
+      float: left
+      border: 1px solid $light-grey
+      cursor: pointer
+      position: relative
+      border-radius: 3px
+      &:nth-of-type(2)
+        margin-left: 4%
+      &:hover
+        background-color: $light-grey
+      &:hover .toggle-content-container p
+        color: $dark-grey
+      &:hover .toggle-content-container i
+        color: $dark-grey
+      .toggle-content-container
+        width: 80px
+        height: 16px
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        input
+          border: 0
+          clip: rect(0 0 0 0)
+          height: 1px
+          margin: -1px
+          overflow: hidden
+          padding: 0
+          position: absolute
+          width: 1px
+        p
+          float: left
+          margin-left: 10px
+          font-size: 15px
+          color: $mid-grey
+        i
+          float: left
+          font-size: 16px
+          color: $mid-grey
+    .selected
+      background: $dark-purple
+      background: -moz-linear-gradient(-45deg,  $dark-purple 0%, $light-purple 100%)
+      background: -webkit-linear-gradient(-45deg,  $dark-purple 0%,$light-purple 100%)
+      background: linear-gradient(135deg,  $dark-purple 0%,$light-purple 100%)
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$dark-purple', endColorstr='$light-purple',GradientType=1 )
+      border: 1px solid purple
+      &:hover .toggle-content-container p
+        color: $light-grey
+      &:hover .toggle-content-container i
+        color: $light-grey
+      .toggle-content-container p
+        color: $white
+      .toggle-content-container i
+        color: $white
+  .book-name-holder
+    width: 100%
+    height: auto
+    float: left
+    margin-top: 30px
+    input
+      height: 40px
+      width: 100%
+      border: 1px solid $light-grey
+      border-radius: 3px
+      font-size: 16px
+      padding: 10px
+      box-sizing: border-box
+  /*.topic-holder
+    width: 100%
+    height: auto
+    float: left
+    margin-top: 30px
+    select
+      height: 40px
+      width: 100%
+      border-radius: 3px
+      font-size: 16px
+      padding: 10px
+      box-sizing: border-box
+      border: 1px solid $light-grey*/
+  .template-holder
+    float: left
+    width: 100%
+    display: block
+    margin-top: 30px
+    .slider-container
+      float: left
+      width: 100%
+      //overflow-x: scroll
+      overflow-y: hidden
+      padding: 3px
+      box-sizing: border-box
+      .item-container
+        width: 280px
+        height: 98px
+        .toggle-btn
+          width: 130px
+          height: 98px
+          box-sizing: border-box
+          background-color: $white
+          display: block
+          float: left
+          border: 1px solid $light-grey
+          cursor: pointer
+          position: relative
+          border-radius: 3px
+          margin-right: 10px
+          margin-bottom: 30px
+          &:hover .bg
+            opacity: 0.5
+          &:hover .bg .preview-contain
+            opacity: 1
+          .bg
+            height: 100%
+            width: 100%
+            background: black
+            opacity: 0
+            padding: 5px
+            box-sizing: border-box
+            input
+              border: 0
+              clip: rect(0 0 0 0)
+              height: 1px
+              margin: -1px
+              overflow: hidden
+              padding: 0
+              position: absolute
+              width: 1px
+            .preview-contain
+              height: 16px
+              width: auto
+              opacity: 0
+              &:hover p, &:hover i
+                color: $white
+              p
+                float: left
+                margin-left: 10px
+                font-size: 15px
+                color: $mid-grey
+              i
+                float: left
+                font-size: 16px
+                color: $mid-grey
+          .title
+            position: absolute
+            top: 103px
+      .selected
+        outline: 3px solid $purple
+        outline-offset: -1px
+        &:hover .toggle-content-container p
+          opacity: 1
+        &:hover .toggle-content-container i
+          opacity: 1
+  .btn-holder
+    float: left
+    width: 100%
+    display: block
+    margin-top: 50px
+    .cancel
+      font-size: 16px
+      float: right
+      line-height: 40px
+      margin-right: 30px
+      cursor: pointer
+      color: $light-grey
+      &:hover
+        color: $dark-grey
+    button
+      cursor: pointer
+      float: right
+      height: 40px
+      width: 189px
+      border-radius: 3px
+      padding: 10px
+      box-sizing: border-box
+      color: $white
+      font-size: 16px
+      background: $dark-purple
+      background: -moz-linear-gradient(-45deg,  $dark-purple 0%, $light-purple 100%)
+      background: -webkit-linear-gradient(-45deg,  $dark-purple 0%,$light-purple 100%)
+      background: linear-gradient(135deg,  $dark-purple 0%,$light-purple 100%)
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$dark-purple', endColorstr='$light-purple',GradientType=1 )
+      border: 1px solid purple
+      &:hover
+        color: $light-grey
+      &:focus
+        outline: none
+.blackout
+  height: 100%
+  width: 100%
+  background: rgb(33, 33, 33)
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  z-index: 5
+  opacity: 0.48

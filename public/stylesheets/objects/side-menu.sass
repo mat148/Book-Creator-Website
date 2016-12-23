@@ -1,0 +1,115 @@
+@import ../base/variables
+#sidebar
+  height: 100%
+  width: 200px
+  background-color: $black
+  display: block
+  position: fixed
+  top: 0
+  left: 0
+  transition: width 0.5s ease
+  z-index: 2
+  overflow-x: hidden
+  .logo-container
+    height: 60px
+    width: 100%
+    cursor: pointer
+    position: relative
+    background: $dark-purple
+    background: -moz-linear-gradient(-45deg,  $dark-purple 0%, $light-purple 100%)
+    background: -webkit-linear-gradient(-45deg,  $dark-purple 0%,$light-purple 100%)
+    background: linear-gradient(135deg,  $dark-purple 0%,$light-purple 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$dark-purple', endColorstr='$light-purple',GradientType=1 )
+    border-bottom: 1px solid $purple
+    box-sizing: border-box
+    p
+      opacity: 1
+      margin-left: 32px
+      font-family: 'Lobster', cursive
+      font-size: 28px
+      color: $white
+      line-height: 60px
+      //text-align: center
+      -webkit-text-shadow: $text-shadow
+      -moz-text-shadow: $text-shadow
+      text-shadow: $text-shadow
+      transition: opacity 0.5s ease
+    .small-logo
+      position: absolute
+      top: 0
+      opacity: 0
+      //display: none
+      -webkit-text-shadow: $text-shadow
+      -moz-text-shadow: $text-shadow
+      text-shadow: $text-shadow
+  ul
+    list-style-type: none
+    .active
+      //background: $dark-grey
+      i
+        color: $white !important
+      p
+        color: $white !important
+    li
+      height: 60px
+      width: 100%
+      position: relative
+      cursor: pointer
+      box-sizing: border-box
+      border-bottom: 1px solid $dark-grey
+      &:hover i, &:hover p
+        color: $white
+      a
+        height: 100%
+        width: 100%
+        display: block
+        i
+          color: $mid-grey
+          padding-left: 28px
+          float: left
+          line-height: 60px
+          font-size: 20px
+        p
+          line-height: 60px
+          color: $mid-grey
+          float: left
+          margin-left: 10px
+          font-size: 14px
+          font-weight: 400
+          white-space: nowrap
+          position: absolute
+          left: 55px
+          opacity: 1
+          transition: opacity 0.5s ease
+//  2 columns
+@media all and (max-width: 768px)
+  html
+    body
+      #sidebar
+        width: 80px
+        &:hover
+          width: 200px
+        &:hover .logo-container .large-logo
+          opacity: 1
+        &:hover .logo-container .small-logo
+          //display: none
+          opacity: 0
+        &:hover ul li i
+          //left: 24px
+          transform: translateX(0)
+        &:hover ul li p
+          opacity: 1
+          //display: inline
+        .logo-container
+          .large-logo
+            opacity: 0
+            //display: none
+          .small-logo
+            opacity: 1
+            //display: block
+        ul
+          li
+            i
+            p
+              opacity: 0
+              //display: none

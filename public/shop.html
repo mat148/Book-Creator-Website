@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Authoro - Online Book Creator - Shop</title>
+  
+  <link rel="stylesheet" href="stylesheets/css/main.css">
+  
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+  
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="stylesheet" href="assets/icons/style.css">
+  <!--[if lt IE 8]><!-->
+  <link rel="stylesheet" href="ie7/ie7.css">
+  <!--<![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDrT6bH6Bh3aBBAIUlKNzfjFeaSt7geyDU",
+      authDomain: "web-book-creator-2bfda.firebaseapp.com",
+      databaseURL: "https://web-book-creator-2bfda.firebaseio.com",
+      storageBucket: "web-book-creator-2bfda.appspot.com",
+    };
+    firebase.initializeApp(config);
+  </script>
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $(".signout").click(function() {
+        logout();
+      });
+      
+      
+      firebase.auth().onAuthStateChanged(function(user){
+        var name, email, photoUrl, uid;
+        
+        name = user.displayName;
+        email = user.email;
+        photoUrl = user.photoURL;
+        uid = user.uid;
+        console.log('user: '+user+', name: '+name+', email: '+email+', photoURL'+photoUrl);
+        console.log($('.user-image'));
+        $('.user-image').css({"background-image" : "url("+photoUrl+")"});
+        $('.account-name').append(""+name+"");
+      });
+    });
+    
+    function logout(){
+      firebase.auth().signOut().then(function() {
+        window.location.href = "index.html";
+      }, function(error) {
+        // An error happened.
+      });
+    }
+  </script>
+</head>
+<body>
+  <section id="sidebar">
+    <div class="logo-container">
+      <p class="large-logo">authoro</p>
+      <p class="small-logo">a</p>
+    </div>
+    <ul>
+      <li>
+        <i class="icon-Dashboard-Icon"></i>
+        <p>Dashboard</p>
+      </li>
+      <li class="active">
+        <i class="icon-Shopping-Icon"></i>
+        <p>Store</p>
+      </li>
+      <li>
+        <i class="icon-Person-Icon"></i>
+        <p>Authors</p>
+      </li>
+      <li>
+        <i class="icon-Question-Icon"></i>
+        <p>Help & Support</p>
+      </li>
+      <li>
+        <i class="icon-Dashboard-Icon"></i>
+        <p>Tutorials</p>
+      </li>
+    </ul>
+  </section>
+  <section id="content-bar">
+    <div class="sort-container">
+      <div class="contain">
+        <div class="sort-holder">
+          <p class="account">Sort By:</p>
+          <i class="icon-Arrow-Icon"></i>
+        </div>
+        <div class="drop-down">
+          <ul>
+            <li><p>Abc</p></li>
+            <li><p>Date Created</p></li>
+            <li><p>Last Modified</p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="user-container">
+      <div class="contain">
+        <div class="user-holder">
+          <div class="user-image"></div>
+          <p class="account-name"></p>
+          <i class="icon-Arrow-Icon"></i>
+        </div>
+        <div class="drop-down">
+          <ul>
+            <li><p>Profile</p></li>
+            <li><p>Settings</p></li>
+            <li><p>Upgrade</p></li>
+            <li class="signout"><p>Sign out</p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="content">
+    <div class="book add-book"></div>
+    <div class="book"></div>
+    <div class="book"></div>
+    <div class="book"></div>
+  </section>
+</body>
+</html>

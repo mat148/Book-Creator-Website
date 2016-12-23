@@ -1,0 +1,185 @@
+#content-bar
+  height: 62px
+  width: calc(100% - 200px)
+  background-color: $white
+  border-bottom: 1px solid $light-grey
+  position: fixed
+  top: 0
+  right: 0
+  padding: 0 $padding
+  box-sizing: border-box
+  z-index: 1
+  transition: width 0.5s ease
+  .sort-container
+    float: left
+    font-size: 14px
+    .contain
+      cursor: pointer
+      height: 60px
+      width: 148px
+      position: relative
+      z-index: 1
+      &:hover
+        height: 240px
+      &:hover .drop-down
+        display: block
+      &:hover .sort-holder
+        background: $lighter-grey
+      &:hover .sort-holder .account, &:hover .sort-holder i
+        color: $dark-grey
+      .sort-holder
+        float: left
+        margin-left: 10px
+        height: 30px
+        width: 120px
+        border-radius: 3px
+        border: 1px solid $light-grey
+        margin-top: 15px
+        .account
+          color: $mid-grey
+          font-size: 14px
+          line-height: 30px
+          float: left
+          margin-left: 10px
+        i
+          color: $mid-grey
+          font-size: 10px
+          float: right
+          line-height: 30px
+          margin-right: 10px
+      .drop-down
+        display: none
+        height: auto
+        width: 145px
+        border-radius: 3px
+        background: $white
+        border: 1px solid $light-grey
+        -webkit-box-shadow: $drop-shadow
+        -moz-box-shadow: $drop-shadow
+        box-shadow: $drop-shadow
+        position: absolute
+        top: 65px
+        left: 50%
+        transform: translateX(-50%)
+        ul
+          list-style: none
+          li
+            height: 43px
+            width: 100%
+            position: relative
+            cursor: pointer
+            border-bottom: 1px solid $light-grey
+            &:hover
+              background: $lighter-grey
+            &:hover i
+              color: $dark-grey
+            &:hover p
+              color: $dark-grey
+            p
+              line-height: 43px
+              color: $mid-grey
+              float: left
+              margin-left: 10px
+              font-size: 14px
+              font-weight: 400
+  .user-container
+    height: 100%
+    float: right
+    font-size: 14px
+    .contain
+      cursor: pointer
+      height: 60px
+      width: 148px
+      position: relative
+      z-index: 1
+      &:hover
+        height: 240px
+      &:hover .drop-down
+        display: block
+      &:hover .user-holder .account
+        color: $dark-grey
+      &:hover .user-holder i
+        color: $dark-grey
+      .user-holder
+        float: right
+        margin-right: 10px
+        .user-image
+          height: 35px
+          width: 35px
+          border-radius: 50%
+          background-image: url(../../assets/images/Placeholder-profileImg.png)
+          background-size: cover
+          margin-top: 12.5px
+          float: left
+          margin-right: 10px
+        .account-name
+          color: $mid-grey
+          font-size: 14px
+          line-height: 60px
+          float: left
+          margin-right: 5px
+        i
+          color: $mid-grey
+          font-size: 10px
+          float: left
+          line-height: 60px
+      .drop-down
+        display: none
+        height: auto
+        width: 145px
+        border-radius: 3px
+        background: $white
+        border: 1px solid $light-grey
+        -webkit-box-shadow: $drop-shadow
+        -moz-box-shadow: $drop-shadow
+        box-shadow: $drop-shadow
+        position: absolute
+        top: 65px
+        left: 50%
+        transform: translateX(-50%)
+        ul
+          list-style: none
+          li
+            height: 43px
+            width: 100%
+            position: relative
+            cursor: pointer
+            border-bottom: 1px solid $light-grey
+            &:hover
+              background: $lighter-grey
+            &:hover i
+              color: $dark-grey
+            &:hover p
+              color: $dark-grey
+            p
+              line-height: 43px
+              color: $mid-grey
+              float: left
+              margin-left: 10px
+              font-size: 14px
+              font-weight: 400
+//  2 columns
+@media all and (max-width: 768px)
+  html
+    body
+      #content-bar
+        width: calc(100% - 80px)
+        padding: 0
+        .sort-container
+          width: auto
+          .contain
+            width: auto
+            .drop-down
+              transform: translateX(0)
+              left: 10px
+        .user-container
+          width: auto
+          .contain
+            width: auto
+            .user-holder
+              p
+                display: none
+            .drop-down
+              transform: translateX(0)
+              left: inherit
+              right: 10px
